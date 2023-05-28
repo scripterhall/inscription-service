@@ -25,7 +25,7 @@ public class InscriptionService {
     
     public ChefProjet inscrirChefProjet(ChefProjet chef){
 
-        if(chefProjetFeignClient.getChefProjetByEmail(chef.getEmail())!=null)
+        if(chefProjetFeignClient.getChefProjetByEmail(chef.getEmail())!=null || membreFeignClient.getMembreByEmail(chef.getEmail())!=null)
             return null ;
         else{
             /** crypt  */
@@ -41,7 +41,7 @@ public class InscriptionService {
 
     public Membre inscrirMembre(Membre membre){
 
-        if(membreFeignClient.getMembreByEmail(membre.getEmail())!=null)
+        if(membreFeignClient.getMembreByEmail(membre.getEmail())!=null || chefProjetFeignClient.getChefProjetByEmail(membre.getEmail())!=null)
             return null  ;
         else{
             /** crypt  */

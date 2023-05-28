@@ -14,7 +14,7 @@ import com.ms.inscriptionservice.model.Membre;
 import com.ms.inscriptionservice.service.InscriptionService;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/inscription")
 public class InscriptionController {
      
     @Autowired
